@@ -27,6 +27,6 @@ entries:
     sources:
     - https://github.com/strimzi/strimzi-kafka-operator
     urls:
-    - https://QingCloudAppcenter.github.com/Kafka-operator-chart/strimzi-kafka-operator-0.1.0.tgz
+    - https://github.com/QingCloudAppcenter/Kafka-operator-chart/blob/gh-page/strimzi-kafka-operator-0.1.0.tgz
     version: 0.1.0
 generated: "2022-10-19T17:31:44.552642+08:00"

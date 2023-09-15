@@ -1,4 +1,4 @@
-{{- if .Values.rbac.create -}}
+{{- if .Values.rbac.create }}
 {{- $root := . -}}
 {{- range append .Values.watchNamespaces .Release.Namespace }}
 ---
@@ -10,9 +10,9 @@ kind: RoleBinding
 {{- end }}
 metadata:
   {{- if $root.Values.watchAnyNamespace }}
-  name: strimzi-cluster-operator-namespaced
+  name: strimzi-cluster-operator-watched
   {{- else }}
-  name: strimzi-cluster-operator
+  name: strimzi-cluster-operator-watched
   {{- end }}
   namespace: {{ . }}
   labels:
@@ -27,7 +27,7 @@ subjects:
     namespace: {{ $root.Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: strimzi-cluster-operator-namespaced
+  name: strimzi-cluster-operator-watched
   apiGroup: rbac.authorization.k8s.io
 {{- end }}
 {{- end }}

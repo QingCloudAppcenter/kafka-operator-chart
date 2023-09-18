@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   strimzi-kafka-operator:
   - apiVersion: v2
-    appVersion: 0.37.0
-    created: "2023-09-15T14:39:42.902806+08:00"
+    appVersion: 0.2.0
+    created: "2023-09-18T09:18:38.437735+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
-    digest: 36d0e63163d801af43636deecb2e3292d8a7c37752156921745b36bd9987c66e
+    digest: f21502da1ff02ab729d2afaeca5c96e7f259f2a1c1440fca0ad36820554cbae3
     home: https://strimzi.io/
     icon: https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/main/documentation/logo/strimzi_logo.png
     keywords:
@@ -23,18 +23,15 @@ entries:
     - name: scholzj
     - name: tombentley
     - name: sknot-rh
-    - name: PaulRMellor
-    - name: im-konge
-    - name: see-quick
     name: strimzi-kafka-operator
     sources:
     - https://github.com/strimzi/strimzi-kafka-operator
     urls:
-    - https://QingCloudAppcenter.github.io/Kafka-operator-chart/strimzi-kafka-operator-0.37.0.tgz
-    version: 0.37.0
+    - https://QingCloudAppcenter.github.io/Kafka-operator-chart/strimzi-kafka-operator-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2023-09-15T14:39:42.896717+08:00"
+    created: "2023-09-18T09:18:38.433682+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 389c6df4ee3ea2e3f44f56df52b9aa9578c6b85707d113a2f0d58988f0917085
     home: https://strimzi.io/
@@ -62,7 +59,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-09-15T14:39:42.89205+08:00"
+    created: "2023-09-18T09:18:38.428267+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 53fdb94fad55acd71762ed51c962cc46090d3d5fc38b69b6413bc0370af21903
     home: https://strimzi.io/
@@ -88,4 +85,4 @@ entries:
     urls:
     - https://QingCloudAppcenter.github.io/Kafka-operator-chart/strimzi-kafka-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-15T14:39:42.886057+08:00"
+generated: "2023-09-18T09:18:38.422177+08:00"

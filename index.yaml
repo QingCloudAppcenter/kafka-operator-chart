@@ -3,9 +3,9 @@ entries:
   strimzi-kafka-operator:
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2023-09-18T16:26:26.589624+08:00"
+    created: "2023-09-18T17:29:45.721663+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
-    digest: cd1156d9295e869f8e327fef41be3eab92909f3e10bfd32a17102d02c55bf2bd
+    digest: a428502d1e8bad3a50746bf64c94264ea97faef67d3314e969abce69364faf72
     home: https://strimzi.io/
     icon: https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/main/documentation/logo/strimzi_logo.png
     keywords:
@@ -31,7 +31,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2023-09-18T16:26:26.585399+08:00"
+    created: "2023-09-18T17:29:45.718439+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 389c6df4ee3ea2e3f44f56df52b9aa9578c6b85707d113a2f0d58988f0917085
     home: https://strimzi.io/
@@ -59,7 +59,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-09-18T16:26:26.580817+08:00"
+    created: "2023-09-18T17:29:45.712268+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 53fdb94fad55acd71762ed51c962cc46090d3d5fc38b69b6413bc0370af21903
     home: https://strimzi.io/
@@ -85,4 +85,4 @@ entries:
     urls:
     - https://QingCloudAppcenter.github.io/Kafka-operator-chart/strimzi-kafka-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2023-09-18T16:26:26.573291+08:00"
+generated: "2023-09-18T17:29:45.698792+08:00"

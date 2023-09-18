@@ -22,3 +22,4 @@ name: strimzi-kafka-operator
 sources:
 - https://github.com/strimzi/strimzi-kafka-operator
 version: 0.2.0
+

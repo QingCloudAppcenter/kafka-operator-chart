@@ -8,14 +8,14 @@ replicas: 1
 watchNamespaces: []
 watchAnyNamespace: false
 
-defaultImageRegistry: quay.io
-defaultImageRepository: strimzi
+defaultImageRegistry: docker.io
+defaultImageRepository: radondb
 defaultImageTag: 0.37.0
 
 image:
   registry: ""
   repository: ""
-  name: operator
+  name: kafka-operator
   tag: ""
 logVolume: co-config-volume
 logConfigMap: strimzi-cluster-operator
@@ -67,19 +67,19 @@ topicOperator:
   image:
     registry: ""
     repository: ""
-    name: operator
+    name: kafka-operator
     tag: ""
 userOperator:
   image:
     registry:
     repository:
-    name: operator
+    name: kafka-operator
     tag: ""
 kafkaInit:
   image:
     registry: ""
     repository: ""
-    name: operator
+    name: kafka-operator
     tag: ""
 tlsSidecarEntityOperator:
   image:

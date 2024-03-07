@@ -2,8 +2,36 @@ apiVersion: v1
 entries:
   strimzi-kafka-operator:
   - apiVersion: v2
+    appVersion: 0.2.1
+    created: "2024-03-07T14:26:32.673471+08:00"
+    description: 'Strimzi: Apache Kafka running on Kubernetes'
+    digest: 87da6017b0153ad437c3234446a4787976761aa955ddd00d4ac056505217f1f0
+    home: https://strimzi.io/
+    icon: https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/main/documentation/logo/strimzi_logo.png
+    keywords:
+    - kafka
+    - queue
+    - stream
+    - event
+    - messaging
+    - datastore
+    - topic
+    maintainers:
+    - name: Frawless
+    - name: ppatierno
+    - name: samuel-hawker
+    - name: scholzj
+    - name: tombentley
+    - name: sknot-rh
+    name: strimzi-kafka-operator
+    sources:
+    - https://github.com/strimzi/strimzi-kafka-operator
+    urls:
+    - https://QingCloudAppcenter.github.io/Kafka-operator-chart/strimzi-kafka-operator-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 0.2.0
-    created: "2023-10-26T11:09:59.45334+08:00"
+    created: "2024-03-07T14:26:32.669874+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 1a453fba9d0be3635831dd6996e47ebf9b6e254d9d09e21a11f7957835a187e6
     home: https://strimzi.io/
@@ -31,7 +59,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2023-10-26T11:09:59.449856+08:00"
+    created: "2024-03-07T14:26:32.664224+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 389c6df4ee3ea2e3f44f56df52b9aa9578c6b85707d113a2f0d58988f0917085
     home: https://strimzi.io/
@@ -59,7 +87,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2023-10-26T11:09:59.444974+08:00"
+    created: "2024-03-07T14:26:32.660016+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 53fdb94fad55acd71762ed51c962cc46090d3d5fc38b69b6413bc0370af21903
     home: https://strimzi.io/
@@ -85,4 +113,4 @@ entries:
     urls:
     - https://QingCloudAppcenter.github.io/Kafka-operator-chart/strimzi-kafka-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-26T11:09:59.437487+08:00"
+generated: "2024-03-07T14:26:32.654473+08:00"

@@ -1,3 +1,7 @@
+global:
+  imageRegistry: docker.io
+  imagePullSecrets: [ ]
+
 # Default values for strimzi-kafka-operator.
 
 # Default replicas for the cluster operator

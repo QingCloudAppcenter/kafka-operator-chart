@@ -29,9 +29,9 @@ spec:
       {{- end }}
     spec:
       serviceAccountName: {{ .Values.serviceAccount }}
-      {{- if .Values.image.imagePullSecrets }}
+      {{- if .Values.global.imagePullSecrets }}
       imagePullSecrets:
-        - name: {{ .Values.image.imagePullSecrets }}
+        - name: {{ .Values.global.imagePullSecrets }}
       {{- end }}
       {{- with .Values.podSecurityContext }}
       securityContext: {{ toYaml . | nindent 8 }}
@@ -49,7 +49,7 @@ spec:
             name: {{ .Values.logConfigMap }}
       containers:
         - name: strimzi-cluster-operator
-          image: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.image.repository}}/{{ .Values.image.name }}:{{ default .Values.defaultImageTag .Values.image.tag }}
+          image: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.image.repository}}/{{ .Values.image.name }}:{{ default .Values.defaultImageTag .Values.image.tag }}
           ports:
             - containerPort: 8080
               name: http
@@ -84,26 +84,26 @@ spec:
               value: {{ .Values.operationTimeoutMs | quote }}
             {{- template "strimzi.kafka.image.map" . }}
             - name: STRIMZI_DEFAULT_TOPIC_OPERATOR_IMAGE
-              value: {{ default "docker.io" .Values.defaultImageRegistry  }}/{{ default .Values.defaultImageRepository .Values.topicOperator.image.repository }}/{{ .Values.topicOperator.image.name }}:{{ default  .Values.defaultImageTag .Values.topicOperator.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry  }}/{{ default .Values.defaultImageRepository .Values.topicOperator.image.repository }}/{{ .Values.topicOperator.image.name }}:{{ default  .Values.defaultImageTag .Values.topicOperator.image.tag }}
             - name: STRIMZI_DEFAULT_USER_OPERATOR_IMAGE
-              value: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.userOperator.image.repository }}/{{ .Values.userOperator.image.name }}:{{ default .Values.defaultImageTag .Values.userOperator.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.userOperator.image.repository }}/{{ .Values.userOperator.image.name }}:{{ default .Values.defaultImageTag .Values.userOperator.image.tag }}
             - name: STRIMZI_DEFAULT_KAFKA_INIT_IMAGE
-              value: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.kafkaInit.image.repository }}/{{ .Values.kafkaInit.image.name }}:{{ default .Values.defaultImageTag .Values.kafkaInit.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.kafkaInit.image.repository }}/{{ .Values.kafkaInit.image.name }}:{{ default .Values.defaultImageTag .Values.kafkaInit.image.tag }}
             - name: STRIMZI_DEFAULT_KAFKA_BRIDGE_IMAGE
-              value: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.kafkaBridge.image.repository }}/{{ .Values.kafkaBridge.image.name }}:{{ default .Values.defaultImageTag .Values.kafkaBridge.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.kafkaBridge.image.repository }}/{{ .Values.kafkaBridge.image.name }}:{{ default .Values.defaultImageTag .Values.kafkaBridge.image.tag }}
             - name: STRIMZI_DEFAULT_JMXTRANS_IMAGE
-              value: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.jmxTrans.image.repository }}/{{ .Values.jmxTrans.image.name }}:{{ default .Values.defaultImageTag .Values.jmxTrans.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.jmxTrans.image.repository }}/{{ .Values.jmxTrans.image.name }}:{{ default .Values.defaultImageTag .Values.jmxTrans.image.tag }}
             - name: STRIMZI_DEFAULT_KANIKO_EXECUTOR_IMAGE
-              value: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.kanikoExecutor.image.repository }}/{{ .Values.kanikoExecutor.image.name }}:{{ default .Values.defaultImageTag .Values.kanikoExecutor.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.kanikoExecutor.image.repository }}/{{ .Values.kanikoExecutor.image.name }}:{{ default .Values.defaultImageTag .Values.kanikoExecutor.image.tag }}
             - name: STRIMZI_DEFAULT_MAVEN_BUILDER
-              value: {{ default "docker.io" .Values.defaultImageRegistry }}/{{ default .Values.defaultImageRepository .Values.mavenBuilder.image.repository }}/{{ .Values.mavenBuilder.image.name }}:{{ default .Values.defaultImageTag .Values.mavenBuilder.image.tag }}
+              value: {{ default "docker.io" .Values.global.imageRegistry }}/{{ default .Values.defaultImageRepository .Values.mavenBuilder.image.repository }}/{{ .Values.mavenBuilder.image.name }}:{{ default .Values.defaultImageTag .Values.mavenBuilder.image.tag }}
             - name: STRIMZI_OPERATOR_NAMESPACE
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-            {{- if .Values.image.imagePullSecrets }}
+            {{- if .Values.global.imagePullSecrets }}
             - name: STRIMZI_IMAGE_PULL_SECRETS
-              value: {{ .Values.image.imagePullSecrets }}
+              value: {{ .Values.global.imagePullSecrets }}
             {{- end }}
             {{- if .Values.image.operatorNamespaceLabels }}
             - name: STRIMZI_OPERATOR_NAMESPACE_LABELS
@@ -113,7 +113,8 @@ spec:
             - name: STRIMZI_IMAGE_PULL_POLICY
               value: {{ .Values.image.imagePullPolicy }}
             {{- end }}
-            {{ if ne .Values.kubernetesServiceDnsDomain "cluster.local" }}- name: KUBERNETES_SERVICE_DNS_DOMAIN
+            {{ if ne .Values.kubernetesServiceDnsDomain "cluster.local" }}
+            - name: KUBERNETES_SERVICE_DNS_DOMAIN
               value: {{ .Values.kubernetesServiceDnsDomain | quote }}{{ end }}
             - name: STRIMZI_FEATURE_GATES
               value: {{ .Values.featureGates | quote }}

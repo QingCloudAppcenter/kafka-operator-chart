@@ -26,7 +26,7 @@ logConfigMap: strimzi-cluster-operator
 logConfiguration: ""
 logLevel: ${env:STRIMZI_LOG_LEVEL:-INFO}
 fullReconciliationIntervalMs: 120000
-operationTimeoutMs: 300000
+operationTimeoutMs: 15000000
 kubernetesServiceDnsDomain: cluster.local
 featureGates: ""
 tmpDirSizeLimit: 1Mi

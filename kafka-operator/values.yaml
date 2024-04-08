@@ -109,6 +109,12 @@ kafkaExporter:
     repository: ""
     name: kafka
     tagPrefix: ""
+strimziClient:
+  image:
+    registry: ""
+    repository: ""
+    name: kafka
+    tagPrefix: ""
 jmxTrans:
   image:
     registry: ""

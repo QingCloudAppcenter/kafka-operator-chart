@@ -21,6 +21,7 @@ image:
   repository: ""
   name: kafka-operator
   tag: ""
+  imagePullPolicy: Always
 logVolume: co-config-volume
 logConfigMap: strimzi-cluster-operator
 logConfiguration: ""

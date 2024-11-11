@@ -5,7 +5,7 @@ entries:
     appVersion: 0.2.2
     created: "2024-11-11T16:24:42.093482+08:00"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
-    digest: 92bd003706f09a556c69edb4f1d0e7164a4e8ad920df245cf2f508ff5e0e496c
+    digest: 625bc0f51f12b6976bfa95a0dc51a6e9fe5e335474e1d48c808f25260676f534
     home: https://strimzi.io/
     icon: https://raw.githubusercontent.com/strimzi/strimzi-kafka-operator/main/documentation/logo/strimzi_logo.png
     keywords:
